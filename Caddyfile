@@ -1,0 +1,5 @@
+# Set DOMAIN in the environment before starting the production compose file.
+{$DOMAIN} {
+  encode gzip zstd
+  reverse_proxy app:3000
+}

@@ -1,0 +1,22 @@
+{
+  "name": "dev-x-book-store-backup",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Dev-X Book Store production-ready full-stack e-commerce app",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node --env-file=.env backend/server.js",
+    "dev": "node --env-file=.env --watch backend/server.js",
+    "test": "node backend/tests/smoke.js",
+    "test:security": "node backend/tests/security.js",
+    "test:all": "npm test && npm run test:security",
+    "check": "node --check backend/server.js && node --check frontend/js/main.js",
+    "db:check": "node --env-file=.env backend/database/db-check.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
+  }
+}
